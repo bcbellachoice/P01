@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Escova alisadora elétrica vermelha | BC Bella Choice</title>
-<meta name="description" content="Escova alisadora elétrica bivolt com 5 níveis de temperatura, de 130 a 200&nbsp;°C. Penteia e alisa ao mesmo tempo.">
-<meta name="theme-color" content="#fbf4f2">
+<title>Escova alisadora elétrica bivolt | BC Bella Choice</title>
+<meta name="description" content="Escova alisadora elétrica bivolt com 5 níveis de temperatura, de 130 a 200&nbsp;°C. Penteia e alisa ao mesmo tempo. Preta, vermelha ou verde.">
+<meta name="theme-color" content="#f4f2ef">
 <meta property="og:title" content="Cabelo liso e alinhado enquanto você penteia">
-<meta property="og:description" content="Escova alisadora elétrica bivolt. Divulgação BC Bella Choice.">
+<meta property="og:description" content="Escova alisadora elétrica bivolt em 3 cores. Divulgação BC Bella Choice.">
 <meta property="og:image" content="imagem1.jpeg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%235a6b50'/%3E%3Ctext x='16' y='21.5' font-family='Georgia,serif' font-size='13' fill='%23f6f1e7' text-anchor='middle'%3EBC%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,8 +23,8 @@ window.BELLA_CONFIG = {
   /* ID do pixel da Meta. Vazio = nada e enviado. */
   pixelId: "",
 
-  /* Paleta: "sage", "vinho", "crepusculo", "grafite" (preto), "rubi" (vermelho) ou "jade" (verde) */
-  tema: "rubi",
+  /* Paleta: "sage", "vinho", "crepusculo", "grafite" (preto), "rubi" (vermelho), "jade" (verde) "lavanda" (lilas) "rose" (rosa) "pink" (pink e prata) "perola" (branco e dourado) ou "oceano" (azul) */
+  tema: "grafite",              /* paleta usada quando a cor escolhida nao tem "tema" */
 
   /* Marca e contato */
   instagram: "https://instagram.com/bcbellachoice",
@@ -33,7 +33,24 @@ window.BELLA_CONFIG = {
   linkAviso: "https://bcbellachoice.github.io/aviso-e-privacidade",
 
   /* ---- Produto ---- */
-  linkCompra: "https://pay.kaiross.com.br/Np2Fm2HjreZx",  /* link de venda da Kaiross */
+  /* ---- Cores ----
+     Cada cor tem o seu link da Kaiross e as suas fotos no carrossel.
+     - id: nome curto, igual ao data-cor="..." das fotos. Tambem abre a pagina ja na cor: https://bcbellachoice.github.io/P01?cor=preta
+     - nome: como aparece para o cliente
+     - amostra: cor da bolinha (uma cor, ou duas para produto de duas cores)
+     - tema: paleta da pagina com essa cor ("" = usa o tema de cima)
+     - link: link de venda da Kaiross. Vazio ("") = a cor some da pagina.
+     - outros campos (texto, ficha...) preenchem os textos marcados com data-var no HTML.
+     A primeira cor (ou a de corInicial) e a que abre por padrao. */
+  cores: [
+    { id:"preta", nome:"Preta", amostra:["#1c1c1c"], tema:"grafite", link:"https://pay.kaiross.com.br/qC8OuiIAucKy" },
+    { id:"vermelha", nome:"Vermelha", amostra:["#b3262e"], tema:"rubi", link:"https://pay.kaiross.com.br/Np2Fm2HjreZx" },
+    { id:"verde", nome:"Verde", amostra:["#2f7a5a"], tema:"jade", link:"https://pay.kaiross.com.br/uFHqNYaIpK1W" }
+  ],
+  corInicial: "vermelha",
+  rotuloCor: "Cor",
+
+  linkCompra: "",             /* so e usado se a lista de cores estiver vazia */
   preco: 79.90,               /* precisa ser o MESMO valor salvo na Kaiross */
   precoDe: 0,                 /* preco "de" riscado; 0 = nao mostra */
 
@@ -61,7 +78,7 @@ window.BELLA_CONFIG = {
   t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
   document,'script','https://connect.facebook.net/en_US/fbevents.js');
   if (id) { fbq('init', id); fbq('track', 'PageView'); }
-  fbq('trackCustom', 'tela produto #escova-vermelha');
+  fbq('trackCustom', 'tela produto #escova-alisadora');
 })();
 </script>
 <!-- Fim Meta Pixel -->
@@ -87,6 +104,26 @@ window.BELLA_CONFIG = {
 [data-tema="jade"] {
   --fundo:#f2f6f3; --superficie:#fafcfa; --texto:#1d2a24; --suave:#55665e;
   --marca:#2f7a5a; --marca-forte:#1f5c43; --marca-clara:#dcebe3; --detalhe:#b89b6a; --borda:#d5e2da;
+}
+[data-tema="lavanda"] {
+  --fundo:#f7f4fa; --superficie:#fdfbfe; --texto:#2a2433; --suave:#645b70;
+  --marca:#8a6fb0; --marca-forte:#6b5191; --marca-clara:#ece4f5; --detalhe:#c4a07a; --borda:#e2d9ec;
+}
+[data-tema="rose"] {
+  --fundo:#fbf3f5; --superficie:#fffafb; --texto:#33232a; --suave:#6f5a62;
+  --marca:#c0577a; --marca-forte:#9c3d5e; --marca-clara:#f7e1e8; --detalhe:#c4a07a; --borda:#efdbe2;
+}
+[data-tema="pink"] {
+  --fundo:#fbf4f8; --superficie:#fffafd; --texto:#2f2129; --suave:#6c5964;
+  --marca:#c2306f; --marca-forte:#9b2257; --marca-clara:#f8dceb; --detalhe:#9aa0a6; --borda:#eed8e3;
+}
+[data-tema="perola"] {
+  --fundo:#faf8f4; --superficie:#ffffff; --texto:#2b2620; --suave:#6a6258;
+  --marca:#b08d57; --marca-forte:#8a6a38; --marca-clara:#f1e8d8; --detalhe:#c9a96e; --borda:#e8e0d2;
+}
+[data-tema="oceano"] {
+  --fundo:#f3f6fa; --superficie:#fbfcfe; --texto:#1d2533; --suave:#57627a;
+  --marca:#3b5f99; --marca-forte:#284577; --marca-clara:#e0e8f4; --detalhe:#b89b6a; --borda:#d8e0ec;
 }
 [data-tema="crepusculo"] {
   --fundo:#f8f2ec; --superficie:#fffaf6; --texto:#33282a; --suave:#6e5f60;
@@ -133,6 +170,18 @@ h1, h2 { font-family:"Cormorant Garamond",Georgia,"Times New Roman",serif; font-
 .seta-car.ant { left:10px; } .seta-car.prox { right:10px; }
 .carrossel.um .pontos, .carrossel.um .seta-car { display:none; }
 .legenda { font-size:.72rem; color:var(--suave); margin:8px 2px 0; }
+
+/* ---------- Seletor de cor ---------- */
+.cores { margin:16px 0 0; }
+.caixa-oferta .cores { margin:18px 0 0; }
+.cores-rotulo { margin:0 0 9px; font-size:.78rem; letter-spacing:.06em; text-transform:uppercase; color:var(--suave); }
+.cores-rotulo b { color:var(--texto); font-weight:500; text-transform:none; letter-spacing:0; font-size:.95rem; }
+.cores-lista { display:flex; flex-wrap:wrap; gap:8px; }
+.cor-opcao { display:inline-flex; align-items:center; gap:8px; padding:6px 13px 6px 7px; border-radius:99px; border:1px solid var(--borda); background:var(--superficie); color:var(--texto); font:inherit; font-size:.88rem; cursor:pointer; transition:border-color .2s, box-shadow .2s, background .2s; }
+.cor-opcao .amostra { width:22px; height:22px; border-radius:50%; flex:none; box-shadow:inset 0 0 0 1px rgba(0,0,0,.16); }
+.cor-opcao[aria-pressed="true"] { border-color:var(--marca); background:var(--marca-clara); box-shadow:0 0 0 1px var(--marca); }
+.cor-opcao:focus-visible { outline:2px solid var(--marca); outline-offset:2px; }
+.slide[hidden] { display:none; }
 
 /* ---------- Preco e botao ---------- */
 .preco { margin:22px 0 14px; display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 10px; }
@@ -257,40 +306,56 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
 
 <main class="pagina">
   <header class="marca">
-    <a href="#" data-link="linkVitrine" data-evento="clique vitrine #escova-vermelha"><b>BC Bella Choice</b></a>
+    <a href="#" data-link="linkVitrine" data-evento="clique vitrine #escova-alisadora"><b>BC Bella Choice</b></a>
     <span>cabelo</span>
   </header>
 
   <!-- 1. HEADLINE -->
   <section class="titulo">
-    <span class="etiqueta">Escova alisadora elétrica bivolt · vermelha</span>
+    <span class="etiqueta">Escova alisadora elétrica bivolt · 3 cores</span>
     <h1>Cabelo liso e alinhado enquanto você penteia</h1>
   </section>
 
-  <!-- 2. CARROSSEL DE FOTOS E VIDEO
+  <!-- 2. CARROSSEL DE FOTOS
        - Coloque os arquivos na mesma pasta deste HTML, com estes nomes.
-       - Esta pagina nao tem video. Para colocar um, adicione esta linha antes das fotos:
-         <div class="slide"><video src="video1.mp4" muted playsinline preload="metadata"></video></div>
-       - Mais fotos? Copie uma linha <div class="slide">...</div> e troque o nome do arquivo.
-       - Menos fotos? Apague a linha da foto que nao existir. -->
+       - data-cor="..." diz de qual cor e a foto (o mesmo id da lista de cores no topo).
+         Foto sem data-cor aparece em todas as cores.
+       - Mais fotos? Copie uma linha <div class="slide"...>...</div> e troque o nome do arquivo.
+       - Video: <div class="slide" data-cor="ID"><video src="video1.mp4" muted playsinline preload="metadata"></video></div>
+       -->
   <div class="carrossel" id="carrossel" aria-roledescription="carrossel" aria-label="Fotos do produto">
     <div class="trilho">
 
+      <!-- FOTOS DA COR: preta -->
+      <div class="slide" data-cor="preta"><img src="imagem1.jpeg" alt="Escova alisadora elétrica preta"></div>
+      <div class="slide" data-cor="preta"><img src="imagem2.jpeg" alt="Escova alisadora preta em uso no cabelo" loading="lazy"></div>
+      <div class="slide" data-cor="preta"><img src="imagem3.jpeg" alt="Detalhe das cerdas da escova alisadora preta" loading="lazy"></div>
+      <div class="slide" data-cor="preta"><img src="imagem4.jpeg" alt="Painel de temperatura da escova alisadora preta" loading="lazy"></div>
+      <div class="slide" data-cor="preta"><img src="imagem5.jpeg" alt="Escova alisadora preta" loading="lazy"></div>
 
-      <div class="slide"><img src="imagem1.jpeg" alt="Escova alisadora elétrica vermelha"></div>
-      <div class="slide"><img src="imagem2.jpeg" alt="Escova alisadora em uso no cabelo"></div>
-      <div class="slide"><img src="imagem3.jpeg" alt="Detalhe das cerdas da escova alisadora"></div>
-      <div class="slide"><img src="imagem4.jpeg" alt="Painel de temperatura da escova alisadora"></div>
-      <div class="slide"><img src="imagem5.jpeg" alt="Escova alisadora vermelha"></div>
-       <div class="slide"><img src="imagem6.jpeg" alt="Escova alisadora vermelha"></div>
+      <!-- FOTOS DA COR: vermelha -->
+      <div class="slide" data-cor="vermelha"><img src="imagem6.jpeg" alt="Escova alisadora elétrica vermelha" loading="lazy"></div>
+      <div class="slide" data-cor="vermelha"><img src="imagem7.jpeg" alt="Escova alisadora vermelha em uso no cabelo" loading="lazy"></div>
+      <div class="slide" data-cor="vermelha"><img src="imagem8.jpeg" alt="Detalhe das cerdas da escova alisadora vermelha" loading="lazy"></div>
+      <div class="slide" data-cor="vermelha"><img src="imagem9.jpeg" alt="Painel de temperatura da escova alisadora vermelha" loading="lazy"></div>
+      <div class="slide" data-cor="vermelha"><img src="imagem10.jpeg" alt="Escova alisadora vermelha" loading="lazy"></div>
+
+      <!-- FOTOS DA COR: verde -->
+      <div class="slide" data-cor="verde"><img src="imagem11.jpeg" alt="Escova alisadora elétrica verde" loading="lazy"></div>
+      <div class="slide" data-cor="verde"><img src="imagem12.jpeg" alt="Escova alisadora verde em uso no cabelo" loading="lazy"></div>
+      <div class="slide" data-cor="verde"><img src="imagem13.jpeg" alt="Detalhe das cerdas da escova alisadora verde" loading="lazy"></div>
+      <div class="slide" data-cor="verde"><img src="imagem14.jpeg" alt="Painel de temperatura da escova alisadora verde" loading="lazy"></div>
+      <div class="slide" data-cor="verde"><img src="imagem15.jpeg" alt="Escova alisadora verde" loading="lazy"></div>
+      <div class="slide" data-cor="verde"><img src="imagem16.jpeg" alt="Escova alisadora verde" loading="lazy"></div>
 
     </div>
   </div>
   <p class="legenda">Imagens ilustrativas.</p>
+  <div class="cores" data-cores></div>
 
   <!-- 3. SUBHEADLINE E BOTAO "VER OFERTA" (leva ate a caixa da oferta) -->
   <p class="sub">É uma escova com cerdas aquecidas: você passa no cabelo como se estivesse penteando, e ela alisa ao mesmo tempo. Tem 5 níveis de temperatura, de 130&nbsp;°C a 200&nbsp;°C, e funciona em 110&nbsp;V e 220&nbsp;V.</p>
-  <a class="botao botao-topo" href="#oferta" data-evento="clique ver oferta #escova-vermelha">Ver oferta<svg class="icone"><use href="#i-baixo"/></svg></a>
+  <a class="botao botao-topo" href="#oferta" data-evento="clique ver oferta #escova-alisadora">Ver oferta<svg class="icone"><use href="#i-baixo"/></svg></a>
 
   <!-- 4. MOTIVOS PARA COMPRAR -->
   <div class="grupo surge">Vale a pena</div>
@@ -334,8 +399,9 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       <li><svg class="icone"><use href="#i-check"/></svg>Penteia e alisa ao mesmo tempo</li>
       <li><svg class="icone"><use href="#i-check"/></svg>5 temperaturas, de 130 a 200&nbsp;°C</li>
       <li><svg class="icone"><use href="#i-check"/></svg>Bivolt automática, boa para viagem</li>
-      <li><svg class="icone"><use href="#i-check"/></svg>Vermelha, leve e com pegada confortável</li>
+      <li><svg class="icone"><use href="#i-check"/></svg><span><span data-var="nome">Preta</span>, leve e com pegada confortável</span></li>
     </ul>
+    <div class="cores" data-cores></div>
     <div class="preco" data-preco></div>
     <p class="ancora">Sai pelo preço de uma ou duas escovas no salão, e você usa quantas vezes quiser.</p>
     <a class="botao botao-oferta" href="#" data-comprar="oferta"><span data-texto-botao>Quero a minha escova</span><svg class="icone"><use href="#i-seta"/></svg></a>
@@ -353,7 +419,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       <tr><th>Frequência</th><td>50 a 60 Hz</td></tr>
       <tr><th>Potência</th><td>45 W</td></tr>
       <tr><th>Temperatura</th><td>5 níveis, de 130&nbsp;°C a 200&nbsp;°C</td></tr>
-      <tr><th>Cor</th><td>Vermelha</td></tr>
+      <tr><th>Cor</th><td data-var="nome">Preta</td></tr>
       <tr><th>Peso</th><td>378 g</td></tr>
       <tr><th>Medidas</th><td>Cerca de 28 x 5 x 5 cm</td></tr>
       <tr><th>Na embalagem</th><td>1 escova alisadora</td></tr>
@@ -404,10 +470,10 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
   <!-- 10. RODAPE -->
   <footer class="rodape">
     <nav>
-      <a href="#" data-link="linkVitrine" data-evento="clique vitrine rodape #escova-vermelha">Ver a vitrine</a>
-      <a href="#" data-link="linkAviso" data-evento="clique aviso e privacidade #escova-vermelha">Aviso e privacidade</a>
-      <a href="#" data-link="instagram" target="_blank" rel="noopener" data-evento="clique instagram #escova-vermelha">Instagram</a>
-      <a href="#" data-email data-evento="clique email #escova-vermelha">E-mail</a>
+      <a href="#" data-link="linkVitrine" data-evento="clique vitrine rodape #escova-alisadora">Ver a vitrine</a>
+      <a href="#" data-link="linkAviso" data-evento="clique aviso e privacidade #escova-alisadora">Aviso e privacidade</a>
+      <a href="#" data-link="instagram" target="_blank" rel="noopener" data-evento="clique instagram #escova-alisadora">Instagram</a>
+      <a href="#" data-email data-evento="clique email #escova-alisadora">E-mail</a>
     </nav>
     <p>A BC Bella Choice é apenas uma página de divulgação. Não fabricamos, não vendemos e não entregamos os produtos apresentados. Venda, pagamento, envio, garantia e atendimento são de responsabilidade da plataforma de vendas e do fornecedor de cada produto. Nosso Instagram e e-mail servem só para assuntos da divulgação.</p>
     <p>Este site não faz parte do Facebook, do Instagram ou da Meta Platforms, Inc. e não é endossado por eles de forma alguma. Facebook e Instagram são marcas registradas da Meta Platforms, Inc.</p>
@@ -420,7 +486,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
 (function () {
   "use strict";
   var C = window.BELLA_CONFIG || {}, doc = document;
-  var temas = ["sage", "vinho", "crepusculo", "grafite", "rubi", "jade"];
+  var temas = ["sage", "vinho", "crepusculo", "grafite", "rubi", "jade", "lavanda", "rose", "pink", "perola", "oceano"];
   doc.documentElement.setAttribute("data-tema", temas.indexOf(C.tema) > -1 ? C.tema : "sage");
 
   function evento(nome, dados) {
@@ -433,6 +499,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
   var preco = +C.preco || 0;
   var gratis = String(C.frete).toLowerCase() !== "cliente";
   var previsto = +C.fretePrevisto || 0;
+  var cores = (C.cores || []).filter(function (v) { return v && v.id && v.link; }), corAtual = null;
 
   /* ---------- Preco e frete ---------- */
   var htmlFrete = gratis
@@ -456,8 +523,8 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       a.querySelector("[data-texto-botao]").textContent = "Esgotado. Avise-me pelo Instagram";
     } else a.href = C.linkCompra || "#";
     a.addEventListener("click", function () {
-      evento(esgotado ? "clique esgotado #escova-vermelha" : "clique comprar " + a.getAttribute("data-comprar") + " #escova-vermelha",
-        { produto: "escova alisadora eletrica vermelha", preco: preco });
+      evento(esgotado ? "clique esgotado #escova-alisadora" : "clique comprar " + a.getAttribute("data-comprar") + " #escova-alisadora",
+        { produto: "escova alisadora eletrica", cor: corAtual ? corAtual.nome : "", preco: preco });
     });
   });
 
@@ -480,49 +547,63 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       itens.forEach(function (o) { o.classList.remove("aberto"); o.querySelector(".pergunta").setAttribute("aria-expanded", "false"); });
       if (abrir) {
         item.classList.add("aberto"); bt.setAttribute("aria-expanded", "true");
-        evento("pergunta faq #escova-vermelha", { pergunta: bt.textContent.trim() });
+        evento("pergunta faq #escova-alisadora", { pergunta: bt.textContent.trim() });
       }
     });
   });
 
-  /* ---------- Carrossel ---------- */
+  /* ---------- Carrossel (mostra so as fotos da cor escolhida) ---------- */
   var car = doc.getElementById("carrossel"), trilho = car.querySelector(".trilho");
-  var slides = $$(".slide", trilho), atual = 0, timer = null, parado = false;
-  slides.forEach(function (s) {
+  var todos = $$(".slide", trilho), slides = [], atual = 0, timer = null, parado = false;
+  todos.forEach(function (s) {
     var m = s.querySelector("img, video");
     if (!m) return;
     s.setAttribute("data-arquivo", m.getAttribute("src"));
     m.addEventListener("error", function () { s.classList.add("faltando"); if (slides[atual] === s) agenda(); });
-    if (m.tagName === "IMG") { m.decoding = "async"; if (s !== slides[0]) m.loading = "lazy"; }
-    if (m.tagName === "VIDEO") m.addEventListener("ended", function () { ir(atual + 1); });
+    if (m.tagName === "IMG") m.decoding = "async";
+    if (m.tagName === "VIDEO") m.addEventListener("ended", function () { if (slides[atual] === s) ir(atual + 1); });
   });
-  if (slides.length < 2) car.classList.add("um");
-  else {
-    var pontos = doc.createElement("div"); pontos.className = "pontos";
+  var pontos = doc.createElement("div"); pontos.className = "pontos"; car.appendChild(pontos);
+  ["ant", "prox"].forEach(function (lado) {
+    var b = doc.createElement("button"); b.type = "button"; b.className = "seta-car " + lado;
+    b.setAttribute("aria-label", lado === "ant" ? "Anterior" : "Próxima");
+    b.innerHTML = '<svg class="icone"><use href="#i-' + (lado === "ant" ? "esq" : "dir") + '"/></svg>';
+    b.onclick = function () { ir(atual + (lado === "ant" ? -1 : 1), true); }; car.appendChild(b);
+  });
+  /* monta o carrossel com as fotos da cor (fotos sem data-cor aparecem em todas) */
+  function montar(cor) {
+    var lista = todos.filter(function (s) {
+      var c = s.getAttribute("data-cor");
+      return !c || !cor || (" " + c + " ").indexOf(" " + cor + " ") > -1;
+    });
+    if (lista.length === slides.length && lista.every(function (s, i) { return s === slides[i]; })) return false;
+    slides = lista;
+    todos.forEach(function (s) {
+      s.hidden = slides.indexOf(s) < 0;
+      var v = s.querySelector("video"); if (v) v.pause();
+    });
+    slides.forEach(function (s, i) { var m = s.querySelector("img"); if (m) m.loading = i < 2 ? "eager" : "lazy"; });
+    car.classList.toggle("um", slides.length < 2);
+    pontos.innerHTML = "";
     slides.forEach(function (s, i) {
       var b = doc.createElement("button"); b.type = "button"; b.setAttribute("aria-label", "Mostrar item " + (i + 1));
       b.onclick = function () { ir(i, true); }; pontos.appendChild(b);
     });
-    car.appendChild(pontos);
-    ["ant", "prox"].forEach(function (lado) {
-      var b = doc.createElement("button"); b.type = "button"; b.className = "seta-car " + lado;
-      b.setAttribute("aria-label", lado === "ant" ? "Anterior" : "Próxima");
-      b.innerHTML = '<svg class="icone"><use href="#i-' + (lado === "ant" ? "esq" : "dir") + '"/></svg>';
-      b.onclick = function () { ir(atual + (lado === "ant" ? -1 : 1), true); }; car.appendChild(b);
-    });
+    trilho.style.transition = "none"; ir(0); void trilho.offsetWidth; trilho.style.transition = "";
+    return true;
   }
   function ir(i, manual) {
     if (!slides.length) return;
     atual = (i + slides.length) % slides.length;
     trilho.style.transform = "translateX(" + (-100 * atual) + "%)";
     $$(".pontos button", car).forEach(function (b, j) { b.setAttribute("aria-current", j === atual); });
-    slides.forEach(function (s, j) {
+    todos.forEach(function (s) {
       var v = s.querySelector("video");
       if (!v) return;
-      if (j === atual && !s.classList.contains("faltando")) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+      if (s === slides[atual] && !s.classList.contains("faltando")) { v.currentTime = 0; var p = v.play(); if (p && p.catch) p.catch(function () {}); }
       else v.pause();
     });
-    if (manual) evento("ver foto #escova-vermelha", { item: atual + 1 });
+    if (manual) evento("ver foto #escova-alisadora", { item: atual + 1, cor: corAtual ? corAtual.nome : "" });
     agenda();
   }
   function agenda() {
@@ -550,7 +631,45 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
       if (en[0].isIntersecting) { parado = false; agenda(); } else { parado = true; clearTimeout(timer); }
     }).observe(car);
   }
-  ir(0);
+
+  /* ---------- Seletor de cor ----------
+     Troca fotos, paleta, textos com data-var e o link do botao de compra.
+     Cor sem link na configuracao nao aparece. O endereco ?cor=id abre ja na cor. */
+  function escolher(v, manual) {
+    if (!v || corAtual === v) return;
+    corAtual = v;
+    if (v.tema && temas.indexOf(v.tema) > -1) doc.documentElement.setAttribute("data-tema", v.tema);
+    var meta = doc.querySelector('meta[name="theme-color"]'), fundo = getComputedStyle(doc.documentElement).getPropertyValue("--fundo").trim();
+    if (meta && fundo) meta.setAttribute("content", fundo);
+    $$("[data-var]").forEach(function (el) { var t = v[el.getAttribute("data-var")]; if (t != null) el.textContent = t; });
+    $$(".cor-opcao").forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-id") === v.id); });
+    if (!esgotado) $$("[data-comprar]").forEach(function (a) { a.href = v.link; });
+    montar(v.id);
+    if (manual) {
+      evento("escolher cor #escova-alisadora", { cor: v.nome });
+      try { var u = new URL(location.href); u.searchParams.set("cor", v.id); history.replaceState(null, "", u.href); } catch (e) {}
+    }
+  }
+  var rotulo = C.rotuloCor || "Cor";
+  $$("[data-cores]").forEach(function (caixa) {
+    if (cores.length < 2) { caixa.remove(); return; }
+    caixa.innerHTML = '<p class="cores-rotulo">' + rotulo + ': <b data-var="nome"></b></p><div class="cores-lista" role="group"></div>';
+    var lista = caixa.querySelector(".cores-lista");
+    lista.setAttribute("aria-label", "Escolha a " + rotulo.toLowerCase());
+    cores.forEach(function (v) {
+      var am = [].concat(v.amostra || "#cccccc");
+      var b = doc.createElement("button"); b.type = "button"; b.className = "cor-opcao"; b.setAttribute("data-id", v.id);
+      var bola = doc.createElement("span"); bola.className = "amostra";
+      bola.style.background = am.length > 1 ? "linear-gradient(135deg," + am[0] + " 50%," + am[1] + " 50%)" : am[0];
+      b.appendChild(bola); b.appendChild(doc.createTextNode(v.nome));
+      b.addEventListener("click", function () { escolher(v, true); });
+      lista.appendChild(b);
+    });
+  });
+  var pedida = (location.search.match(/[?&]cor=([\w-]+)/) || [])[1];
+  var inicial = cores.filter(function (v) { return v.id === pedida; })[0] ||
+    cores.filter(function (v) { return v.id === C.corInicial; })[0] || cores[0];
+  if (inicial) escolher(inicial, false); else montar(null);
 
   /* ---------- Animacao de entrada e eventos de leitura ---------- */
   var surge = $$(".surge");
@@ -566,7 +685,7 @@ h2 { font-size:1.75rem; margin-bottom:16px; }
         if (x.isIntersecting && !vistos[n]) { vistos[n] = 1; evento(n); obs.unobserve(x.target); }
       });
     }, { threshold: .4 });
-    [[".passos", "viu como usar #escova-vermelha"], [".ficha", "viu detalhes #escova-vermelha"], [".faq", "viu faq #escova-vermelha"]].forEach(function (m) {
+    [[".passos", "viu como usar #escova-alisadora"], [".ficha", "viu detalhes #escova-alisadora"], [".faq", "viu faq #escova-alisadora"]].forEach(function (m) {
       var el = doc.querySelector(m[0]); if (el) { el.setAttribute("data-visto", m[1]); obs.observe(el); }
     });
   } else surge.forEach(function (el) { el.classList.add("visivel"); });
